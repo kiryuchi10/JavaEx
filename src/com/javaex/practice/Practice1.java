@@ -79,8 +79,8 @@ public class Practice1 {
 			System.out.println(a);//5
 			//Ex15
 			System.out.println(12/5-3);
-			System.out.println(12/5-3);
-			System.out.println(12/5-3);
+			System.out.println(5+19%3);
+			System.out.println(2+2/2);
 			System.out.println(12/5-3);
 			System.out.println(12/5-3);
 			System.out.println(12/5-3);

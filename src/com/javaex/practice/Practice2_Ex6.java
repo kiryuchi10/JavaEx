@@ -1,7 +1,7 @@
 package com.javaex.practice;
 import java.util.Scanner;
 
-public class Practice2 {
+public class Practice2_Ex6 {
 
 	public static void main(String[] args) {
 		//Ex6
