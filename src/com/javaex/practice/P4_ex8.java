@@ -15,7 +15,7 @@ public class P4_ex8 {
 			{
 				if(i>1 &numArray[i]==numArray[j])
 				{
-					continue;
+					break;
 				}
 				else
 				{
