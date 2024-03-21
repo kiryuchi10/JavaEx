@@ -7,7 +7,7 @@ public class EnumEx {
 		// TODO Auto-generated method stub
 //		String today;
 		Week today=Week.Wednesday;
-		System.out.println(today,today.name(),today.ordinal());
+		System.out.printf(today,today.name(),today.ordinal());
 				
 		String strWeek = "FRIDAY";
 	    Week obj = Week.valueOf(strWeek);
