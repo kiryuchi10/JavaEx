@@ -12,8 +12,14 @@ public class P3_ex13 {
 		int sum=0;
 		for(int i=1;i<=num;i++) {
 			sum+=i;
+			System.out.print(i);
+			if(i<num) {
+				System.out.print("+");
+			}
+			
 		}
-		System.out.println(sum);
+	
+		System.out.println("="+sum);
 		sc.close();
 	}
 }
