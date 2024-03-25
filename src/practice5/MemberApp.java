@@ -4,19 +4,13 @@ public class MemberApp {
 	private int point;
 	private String name;
 	private String ID;
-	public String setName;
-	public String setID;
-	public int setPoint;
-	public void MemberApp(String name, int point,String ID) {
-		this.name=name;
-		this.point=point;
-		this.ID=ID;
-	}
 	
 	public String getName() {
 		return name;
 	}
-	
+	public void setName(String name) {
+		this.name=name;
+	}
 	public int getPoint() {
 		return point;
 	}
