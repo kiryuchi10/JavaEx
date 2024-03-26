@@ -4,7 +4,7 @@ public class P5_Ex2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Goods camera=new Goods();
+		Goods camera=new Goods(null, 0);//모르겠다...
 		Goods cup = new Goods("머그컵",2000);
 		
 		camera.setName("니콘");
