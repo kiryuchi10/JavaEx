@@ -8,8 +8,11 @@ public class Goods {
 //생성자
 	//getter, setter 가 없으면 read only 필드를 만들수 있다
 	//getter/setter 모두가 없으면 private이 된다 
-	private String name;
-	private int price;
+	private static String name;
+	private static int price;
+	public Goods(){
+		this(name,price);
+	}
 	public Goods(String name, int price) {
 		this.name=name;
 		this.price=price;

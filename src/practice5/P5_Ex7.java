@@ -20,7 +20,7 @@ public class P5_Ex7 {
 			school[i]=input1.next();
 			System.out.println("----------------------------");
 		}
-		Friend p1=new Friend(name);
+		Friend p1=new Friend(name,phone,school);
 		p1.printFriend();
 				//,phone,school);
 	}
