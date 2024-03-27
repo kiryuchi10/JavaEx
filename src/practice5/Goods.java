@@ -10,12 +10,12 @@ public class Goods {
 	//getter/setter 모두가 없으면 private이 된다 
 	private static String name;
 	private static int price;
-	public Goods(){
-		this(name,price);
-	}
+	
 	public Goods(String name, int price) {
 		this.name=name;
 		this.price=price;
+	}
+	public Goods() {	
 	}
 	public String getName() {
 		return name;

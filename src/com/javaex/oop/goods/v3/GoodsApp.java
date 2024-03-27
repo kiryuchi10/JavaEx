@@ -26,7 +26,8 @@ public class GoodsApp {
 				notebook.name,notebook.price);
 		System.out.printf("%s,%d원%n", 
 				mug.name,mug.price);*/
-		camera.draw();
+		camera.showinfo();
+		mug.showinfo();
 	}
 
 }

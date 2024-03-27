@@ -6,27 +6,46 @@ public class Book {
 	private static String title;
 	private static String author;
 	private static int stateCode;
-
+	
+	public Book(){
+	}
 	public Book(int index,String title
 			, String author) {
-		this.index=index;
-		this.title=title;
-		this.author=author;
-		this.stateCode=stateCode;
+		Book.index=index;
+		Book.title=title;
+		Book.author=author;
+		Book.stateCode=1;
 	}
-	static int getIndex() {
+	public int getIndex() {
 		return index;
 	}
-	static String getTitle() {
+	public void setIndex(int index) {
+		Book.index=index;
+	}
+	public String getTitle() {
 		return title;
 	}
-	static String getAuthor() {
+	public void setTitle(String title) {
+		Book.title=title;
+	}
+	public String getAuthor() {
 		return author;
 	}
-	static int getRent() {
+	public void setAuthor(String author) {
+		Book.author=author;
+	}
+	public int getRent( ) {
 		return stateCode;
 	}
-	public int setRent(int stateCode) {
-		return this.stateCode=stateCode;
+	public void setRent(int stateCode) {
+		Book.stateCode=stateCode;
+	}
+	public void print() {
+		if (stateCode==0) {
+			System.out.print("Not available");
+		}
+		else {
+			System.out.print("Available");
+		}
 	}
 }
