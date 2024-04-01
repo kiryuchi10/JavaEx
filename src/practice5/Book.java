@@ -2,50 +2,48 @@ package practice5;
 
 public class Book {
 	
-	private static int index;
-	private static String title;
-	private static String author;
-	private static int stateCode;
+	private int index;
+	private String title;
+	private String author;
+	private int stateCode;
 	
 	public Book(){
 	}
 	public Book(int index,String title
 			, String author) {
-		Book.index=index;
-		Book.title=title;
-		Book.author=author;
-		Book.stateCode=1;
+		this.index=index;
+		this.title=title;
+		this.author=author;
+		this.stateCode=1;
 	}
 	public int getIndex() {
 		return index;
 	}
 	public void setIndex(int index) {
-		Book.index=index;
+		this.index=index;
 	}
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
-		Book.title=title;
+		this.title=title;
 	}
 	public String getAuthor() {
 		return author;
 	}
 	public void setAuthor(String author) {
-		Book.author=author;
+		this.author=author;
 	}
-	public int getRent( ) {
+	public int getprint( ) {
 		return stateCode;
 	}
-	public void setRent(int stateCode) {
-		Book.stateCode=stateCode;
+	public void setprint(int stateCode) {
+		this.stateCode=stateCode;
 	}
-	public void print() {
-		if (stateCode==0) {
-			System.out.print("Not available");
-		}
-		else {
-			System.out.print("Available");
-		}
+	
+	@Override
+	public String toString() {
+		return String.format("index=%d, title=%s, author=%s, print=%d%n", index, title, author, stateCode);
 	}
+
 }

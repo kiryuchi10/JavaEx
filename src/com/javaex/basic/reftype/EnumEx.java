@@ -7,7 +7,11 @@ public class EnumEx {
 		// TODO Auto-generated method stub
 //		String today;
 		Week today=Week.Wednesday;
-		System.out.printf(today,today.name(),today.ordinal());
+		System.out.println(today);
+		
+		System.out.printf("Today is %s(%d)%n",
+				today.name(),	//	열거 상수의 문자열 표현
+				today.ordinal());	//	열거 상수의 열거 객체 내 순번
 				
 		String strWeek = "FRIDAY";
 	    Week obj = Week.valueOf(strWeek);

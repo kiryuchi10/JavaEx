@@ -44,7 +44,7 @@ public class AnimalApp {
 			pet=new Cat("아즈라엘");
 			pet.eat();
 			pet.walk();
-			pet.meow();
+			//pet.meow();
 		}
 		
 	}

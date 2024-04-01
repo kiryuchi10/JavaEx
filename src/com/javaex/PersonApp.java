@@ -1,14 +1,14 @@
-package practice6;
+package com.javaex;
 
 public class PersonApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Person p = new Person("정우성", "010-1111-2222");
-		//Person s = new Customer("유재석", "010-2222-3333", 1, 1000);
+		Customer s = new Customer("유재석", "010-2222-3333", 1, 1000);
 		
 		p.showInfo();
-		//s.showInfo();
+		s.showInfo();
 	}
 
 }
