@@ -42,13 +42,16 @@ public class Scoreboard implements Cloneable {
 	//복제본 생성 메서드 
 	public Scoreboard getClone() {
 		//새로운 인스턴스를 저장함 변수 선언 
+		//1)Object clone=null;
 		Scoreboard clone=null;
 		try {
-			clone=(Scoreboard)clone();
+			clone=(Scoreboard)clone(); //clone() 리턴 타입이 object이다 그랙서 형변환 필요
+			//1)clone=super.clone();
 		}catch(CloneNotSupportedException e){
 			// 예외 로그 출력
 			e.printStackTrace();
 		}
+		//1) return (Scoreboard)clone;
 		return clone;
 		
 	}

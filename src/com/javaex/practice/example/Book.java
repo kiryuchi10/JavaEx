@@ -1,15 +1,17 @@
-package practice5;
+package com.javaex.practice.example;
 
 import java.util.Scanner;
 
 
-public class BookEx {
+
+
+public class Book {
     private int index;
     private String title;
     private String author;
     private int availability;
 
-    public BookEx(int index, String title, String author) {
+    public Book(int index, String title, String author) {
         this.index = index;
         this.title = title;
         this.author = author;
