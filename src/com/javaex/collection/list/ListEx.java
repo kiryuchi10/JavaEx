@@ -1,5 +1,6 @@
 package com.javaex.collection.list;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,9 +8,10 @@ public class ListEx {
 
 	public static void main(String[] args) {
 		// 	객체가 아니고 인터페이스
-		List lst=new List();
+		//List lst=new List();
 		
 		List<String> lst = new LinkedList<>();
+		//List<String> lst = new ArrayList<>();
 		
 		// 객체 추가 : add, 맨 마지막에 노트 연결
 		lst.add("Java");
@@ -29,12 +31,25 @@ public class ListEx {
 		
 		System.out.println("size="+lst.size());
 		
-		System.out.println("lst="+lst)
+		System.out.println("lst="+lst);
 		
-		lst.clear(); 
+		
 		System.out.println("lst="+lst);
 		//삿제 리;
-
+		lst.remove(2);
+		lst.remove("Python");
+		System.out.println("lst="+lst);
+		
+		System.out.println("==============Iterator");
+		Iterator<String> it = lst.iterator();
+		
+		while(it.hasNext()) {
+			String item =it.next();
+			System.out.println(item + " ");
+		}
+		lst.clear(); 
+		System.out.println("lst="+lst);
+		
 	}
 
 }
