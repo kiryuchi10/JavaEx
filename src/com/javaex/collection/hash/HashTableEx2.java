@@ -46,7 +46,7 @@ public class HashTableEx2 {
 		// Value는 Key를 통한 접근만 가능, 중복을 허용한다
 		
 		//	Hashtable 선언
-		Map<String,ClassRoom> map=new Hashtable<>(); //key는 string, value는 ClassRoom
+		Hashtable<String,ClassRoom> map=new Hashtable<>(); //key는 string, value는 ClassRoom
 		map.put("101", new ClassRoom("Java","R101")); // 맵에 데이터 넣기 put
 		map.put("202",new ClassRoom( "C","R202"));
 		map.put("303",new ClassRoom( "Python","R303"));

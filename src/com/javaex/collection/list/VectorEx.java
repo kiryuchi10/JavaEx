@@ -46,7 +46,7 @@ public class VectorEx {
 		//v2.addElement(String.valueOf("vector")); //string은 number를 상속 받지 않는 객체 
 		
 		// TODO : 개선된 방식으로 루프돌리기 
-		//Eunmeration
+		//Enmeration
 		
 		//Enumeration e=v.elements();
 		Enumeration<?super Number> e2= v2.elements();
@@ -57,88 +57,5 @@ public class VectorEx {
 		}
 		System.out.println();
 	}
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	Vecot<Integer>v2= new Vector<;\>
 	
 }
