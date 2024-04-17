@@ -28,12 +28,12 @@ public class BufferedCharStreamEx {
 				BufferedReader br = new BufferedReader(fr);
 				BufferedWriter bw = new BufferedWriter(fw);)
 		{
-			String line = "";
+			String line;// = "";
 			while((line=br.readLine())!=null) {
 				//System.out.println(line);
 				if(line.toLowerCase().contains("leaf")||
 				   line.toLowerCase().contains("leaves")) {
-					//System.out.println(line);
+					System.out.println(line);
 					// 필터링된 라인만 별도 저장
 					bw.write(line);
 					bw.newLine();

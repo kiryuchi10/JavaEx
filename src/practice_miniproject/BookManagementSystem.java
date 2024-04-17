@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,8 +23,12 @@ class Customer {
         this.phoneNumber = phoneNumber;
         this.companyNumber = companyNumber;
     }
-
-  
+    public void setIndex(int index) {
+    	this.index=index;
+    }
+    public int getIndex() {
+    	return index;
+    }
 
 
 	public String getName() {
@@ -85,8 +90,16 @@ public class BookManagementSystem {
     public void removeCustomer(int index) {
         if (index >= 0 && index < customers.size()) {
             customers.remove(index);
+            //Collections.sort(customers);
         } else {
             System.out.println("Invalid index.");
+        }
+//        Customer customer=new Customer();
+//        customer=customers.get(1);
+//        String customers_1_name=customer.getName();
+//        System.out.println(customers_1_name); // 마이콜 
+        for (int i = 0; i < customers.size(); i++) {
+            customers.get(i).setIndex(i + 1);
         }
     }
 
@@ -106,7 +119,7 @@ public class BookManagementSystem {
     // Display all customers with index
     public void displayCustomers() {
         for (Customer customer : customers) {
-            System.out.println(customer.toString());
+            System.out.println(customer);
         }
     }
 
@@ -156,7 +169,7 @@ public class BookManagementSystem {
                     System.out.print("삭제번호: ");
                     index = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
-                    system.removeCustomer(index);
+                    system.removeCustomer(index-1);
                     
                     break;
                 case 4:
@@ -166,7 +179,7 @@ public class BookManagementSystem {
                     if (searchResults.isEmpty()) {
                         System.out.println("비어있다");
                     } else {
-                        System.out.println("\nSearch Results:");
+                        System.out.println("\n탐색결과:");
                         for (Customer customer : searchResults) {
                             System.out.println(customer);
                         }

@@ -11,14 +11,13 @@ public class ScannerEx {
 	public static void main(String[] args) {
 		// 입력 소스(파일)
 		File file= new File(fileName);
-		Scanner scanner;
+		Scanner scanner = null;
 		try {
 			scanner = new Scanner(file);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		try {
 		String name;
 		float height;
 		float weight;
@@ -28,10 +27,7 @@ public class ScannerEx {
 			height = scanner.nextFloat();
 			weight = scanner.nextFloat();
 			
-			System.out.printf("%s, %f,%f",name,height,weight);
-		}
-		}catch(FileNotFoundException e) {
-			System.err.println("파일을 찾을 수 없습니다.");
+			System.out.printf("%s, %f, %f",name,height,weight);
 		}
 		scanner.close();
 		
