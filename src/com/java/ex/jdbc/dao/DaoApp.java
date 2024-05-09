@@ -10,67 +10,77 @@ public class DaoApp {
 		listAuthors();
 		System.out.println();
 		
-//		insertAuthor();
-		updateAuthor();
+		insertAuthor();
+//		updateAuthor();
 //		getAuthor();
 //		deleteAuthor();
+		
 		System.out.println();
 		
 		listAuthors();
-		
 	}
+	
 	private static void deleteAuthor() {
-		Scanner sc=new Scanner(System.in);
-		System.out.print("삭제할 레코드 ID:");
-		Long authorId=Long.parseLong(sc.nextLine());
+		Scanner scanner = new Scanner(System.in);
 		
-		AuthorDAO dao= new AuthorDAOImplOracle();
+		System.out.print("삭제할 레코드 ID:");
+		Long authorId = Long.parseLong(scanner.nextLine());
+		
+		AuthorDAO dao = new AuthorDAOImplOracle();
 		boolean success = dao.delete(authorId);
 		
-		System.out.println("Author DELETE " + (success ? "성공": "실패"));	
+		System.out.println("Author DELETE " + (success ? "성공": "실패"));
 		
+		scanner.close();
 	}
+	
 	private static void getAuthor() {
-		Scanner sc=new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
+		
 		System.out.print("레코드 ID:");
-		Long authorId=Long.parseLong(sc.nextLine());
+		Long authorId = scanner.nextLong();
+		scanner.nextLine();
 		
-		AuthorDAO dao= new AuthorDAOImplOracle();
-		AuthorVO vo =dao.get(authorId);
+		AuthorDAO dao = new AuthorDAOImplOracle();
+		AuthorVO vo = dao.get(authorId);
 		
-		if(vo!=null) {
-			System.out.printf("%d\t%s\t%s%n",vo.getAuthorId(),vo.getAuthorName(),vo.getAuthorDesc());
+		if (vo != null) {
+			System.out.printf("%d\t%s\t%s%n", vo.getAuthorId(), vo.getAuthorName(), vo.getAuthorDesc());
+		} else {
+			System.out.println("레코드를 찾지 못했습니다.");
 		}
-		else {
-			System.out.println("레코드를 찾지 못했습니다");
-		}
-		sc.close();
+		
+		scanner.close();
 	}
+	
 	private static void updateAuthor() {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("변경할 레코드 ID");
-		Long authorId = Long.parseLong(sc.nextLine());
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("변경할 레코드 ID:");
+		Long authorId = scanner.nextLong();
+		scanner.nextLine();
 		System.out.print("이름:");
-		String name =sc.nextLine();
+		String name = scanner.nextLine();
 		System.out.print("정보:");
-		String desc =sc.nextLine();
+		String desc = scanner.nextLine();
 		
-		AuthorVO vo = new AuthorVO(authorId,name,desc);
-		AuthorDAO dao= new AuthorDAOImplOracle();
-		boolean success=dao.update(vo);
+		AuthorVO vo = new AuthorVO(authorId, name, desc);
 		
-		System.out.print("AUTHOR UPDATE "+(success? "성공":"실패"));
-		sc.close();
+		AuthorDAO dao = new AuthorDAOImplOracle();
+		boolean success = dao.update(vo);
 		
-		}
+		System.out.println("Author UPDATE " + (success ? "성공": "실패"));
+		scanner.close();
+	}
+	
 	private static void insertAuthor() {
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		
 		System.out.print("이름:");
-		String name = sc.nextLine();
+		String name = scanner.nextLine();
 		
 		System.out.print("정보:");
-		String desc = sc.nextLine();
+		String desc = scanner.nextLine();
 		
 		AuthorVO vo = new AuthorVO(name, desc);
 		
@@ -79,7 +89,7 @@ public class DaoApp {
 		
 		System.out.println("Author INSERT " + (success ? "성공": "실패"));
 		
-		sc.close();
+		scanner.close();
 		
 	}
 	
