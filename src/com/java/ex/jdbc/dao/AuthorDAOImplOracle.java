@@ -74,7 +74,7 @@ public class AuthorDAOImplOracle implements AuthorDAO {
 		PreparedStatement pstmt=null;
 		ResultSet rs =null;
 		AuthorVO vo= null;
-		int getCount=0;
+//		int getCount=0;
 		
 		try {
 			conn = getConnection();
@@ -90,7 +90,7 @@ public class AuthorDAOImplOracle implements AuthorDAO {
 				String authorName = rs.getString(2);
 				String authorDesc= rs.getString(3);
 				vo= new AuthorVO(authorId,authorName, authorDesc);
-				getCount=pstmt.executeUpdate();
+//				getCount=pstmt.executeUpdate();
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

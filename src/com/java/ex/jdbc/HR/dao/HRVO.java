@@ -10,22 +10,52 @@ import java.sql.Date;
 //- toString(), equals() 메서드는 포함하기도 한다
 public class HRVO {
 // 필드
+private Long empId;
+private String empName;
 private String firstName;
 private String lastName;
 private String email;
 private String phoneNumber;
 private Date hiredate;
+private String salary;
 // 기본 생성자
-public HRVO() {
-
-}
-public HRVO(String firstName, String lastName, String email, String phoneNumber, Date hireDate) {
+public HRVO(Long empId, String empName, String empSalary) {
 	super();
+	this.empId = empId;
+	this.empName = empName;
+	this.salary = salary;
+}
+public HRVO(Long empId, String empName, String firstName, String lastName, String email, String phoneNumber,
+		Date hiredate, String salary) {
+	super();
+	this.empId = empId;
+	this.empName = empName;
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.email = email;
 	this.phoneNumber = phoneNumber;
-	this.hiredate = hireDate;
+	this.hiredate = hiredate;
+	this.salary = salary;
+}
+public HRVO(String firstName, String lastName, String email, String phoneNumber, Date hireDate) {
+	// TODO Auto-generated constructor stub
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.email = email;
+	this.phoneNumber = phoneNumber;
+	this.hiredate = hiredate;
+}
+public Long getEmpId() {
+	return empId;
+}
+public void setEmpId(Long empId) {
+	this.empId = empId;
+}
+public String getEmpName() {
+	return empName;
+}
+public void setEmpName(String empName) {
+	this.empName = empName;
 }
 public String getFirstName() {
 	return firstName;
@@ -57,10 +87,20 @@ public Date getHiredate() {
 public void setHiredate(Date hiredate) {
 	this.hiredate = hiredate;
 }
+public String getSalary() {
+	return salary;
+}
+public void setSalary(String salary) {
+	this.salary = salary;
+}
 @Override
 public String toString() {
-	return "HRVO [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber="
-			+ phoneNumber + ", hiredate=" + hiredate + "]";
+	return "HRVO [empId=" + empId + ", empName=" + empName + ", firstName=" + firstName + ", lastName=" + lastName
+			+ ", email=" + email + ", phoneNumber=" + phoneNumber + ", hiredate=" + hiredate + ", salary=" + salary
+			+ "]";
 }
 
+
 }
+
+

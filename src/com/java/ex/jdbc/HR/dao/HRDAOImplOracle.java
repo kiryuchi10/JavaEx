@@ -77,36 +77,39 @@ public class HRDAOImplOracle implements HRDAO {
 	}
 
 	@Override
-	public HRVO HRsearch(String empName) {
-	    Scanner sc = new Scanner(System.in);
+	public boolean HRsearch(String empName) {
+	    //Scanner sc = new Scanner(System.in);
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;
 	    ResultSet rs = null;
-	    HRVO vo = null;
+	    int searchCount = 0;
 
+	    
 	    try {
 	        conn = getConnection();
-	        System.out.print("Enter part of the employee's first or last name: ");
-	        String keyword = sc.nextLine();
+	        //System.out.print("Enter part of the employee's first or last name: ");
+	        String keyword = empName;
 
-	        String sql = "SELECT first_name, last_name, email, phone_number, hire_date " +
-	                     "FROM employees " +
-	                     "WHERE first_name LIKE ? OR last_name LIKE ?";
-	        pstmt = conn.prepareStatement(sql);
-	        pstmt.setString(1, "%" + keyword.toLowerCase() + "%");
-	        pstmt.setString(2, "%" + keyword.toLowerCase() + "%");
+	    	String sql = "SELECT first_name || ' ' || last_name, email, phone_number, hire_date "
+					+ "FROM employees WHERE lower(first_name) LIKE ? "
+					+ "OR lower(last_name) LIKE ?";
+			
+			pstmt = conn.prepareStatement(sql);
 
-	        rs = pstmt.executeQuery();
+			pstmt.setString(1, "%" + keyword.toLowerCase() + "%");
+			pstmt.setString(2, "%" + keyword.toLowerCase() + "%");
+			
+			rs = pstmt.executeQuery();
 
-	        if (rs.next()) {
-	            String firstName = rs.getString("first_name");
-	            String lastName = rs.getString("last_name");
-	            String email = rs.getString("email");
-	            String phoneNumber = rs.getString("phone_number");
-	            Date hireDate = rs.getDate("hire_date");
-	            
-	            vo = new HRVO(firstName, lastName, email, phoneNumber, hireDate);
-	        }
+			// ResultSet 순회
+			while (rs.next()) {
+				String name = rs.getString(1);
+				String email = rs.getString(2);
+				String phoneNumber = rs.getString(3);
+				Date hireDate = rs.getDate(4);
+				searchCount++;
+				System.out.printf("%s: %s, %s, %s%n", name, email, phoneNumber, hireDate);
+			}
 	    } catch (SQLException e) {
 	        System.err.println("SQL Error! ");
 	        e.printStackTrace();
@@ -119,7 +122,7 @@ public class HRDAOImplOracle implements HRDAO {
 	            e.printStackTrace();
 	        }
 	    }
-	    return vo;
+	    return searchCount>0;
 	}
 
 	@Override
@@ -131,7 +134,7 @@ public class HRDAOImplOracle implements HRDAO {
 
 	    try {
 	        conn = getConnection();
-	        System.out.print("최소급여 최대급여: ");
+	        System.out.println();
 	        String keyword = empSalary.trim();
 
 	        String[] input = keyword.split(" ");
