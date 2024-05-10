@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class DaoApp {
 
 	public static void main(String[] args) {
-		//searchEmployees();
+		searchEmployees();
 		System.out.println();
 		
-		searchSalary();
+		//searchSalary();
 
 		System.out.println();
 		
