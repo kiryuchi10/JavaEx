@@ -11,9 +11,9 @@ public class DaoApp {
 		System.out.println();
 
 //		insertBookDB();
-//		updateBookDB();
+		updateBookDB();
 //		getBookDB();
-		deleteBookDB();
+//		deleteBookDB();
 
 		System.out.println();
 
@@ -81,8 +81,11 @@ public class DaoApp {
 
 		System.out.print("휴대폰 번호:");
 		String phoneNumber = scanner.nextLine();
+		
+		System.out.print("집 번호:");
+		String homeNumber = scanner.nextLine();
 
-		BookVO vo = new BookVO(name, phoneNumber);
+		BookVO vo = new BookVO(name, phoneNumber,homeNumber);
 
 		BookDBDAO dao = new BookDAOImplOracle();
 		boolean success = dao.insert(vo);

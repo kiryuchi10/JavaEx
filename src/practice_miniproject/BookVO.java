@@ -4,6 +4,7 @@ public class BookVO {
 	private String name;
 	private String phoneNumber;
 	private String homeNumber;
+	private int list_info;
 	
 	public BookVO() {}
 	public BookVO(String phoneNumber, String homeNumber) {
@@ -13,6 +14,13 @@ public class BookVO {
 	}
 	public BookVO(String name, String phoneNumber, String homeNumber) {
 		super();
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.homeNumber = homeNumber;
+	}
+	public BookVO(int list_info,String name, String phoneNumber, String homeNumber) {
+		super();
+		this.list_info=list_info;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.homeNumber = homeNumber;

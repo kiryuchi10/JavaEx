@@ -1,7 +1,5 @@
 package practice_miniproject;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -42,7 +40,7 @@ public class BookDAOImplOracle implements BookDBDAO {
 			stmt = conn.createStatement();
 			// 3. SQL 쿼리 전송 -> ResultSet
 			String sql = "SELECT name, mobile_number, landline_number FROM phonedb";
-			//String sql = "SELECT author_id, author_name, author_desc FROM author";
+			// String sql = "SELECT author_id, author_name, author_desc FROM author";
 			rs = stmt.executeQuery(sql);
 
 			// 4. ResultSet 순회 -> 레코드를 BookVO로 변경
@@ -123,12 +121,13 @@ public class BookDAOImplOracle implements BookDBDAO {
 			// 커넥션
 			conn = getConnection();
 			// 실행 계획 준비
-			String sql = "INSERT INTO phoneDB (name, phone_number, landline_number) "
-					+ "VALUES (seq_Book_id.NEXTVAL, ?, ?)";
+			String sql = "INSERT INTO phoneDB (name, mobile_number, landline_number) "
+					+ "VALUES (?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, BookVo.getName());
 			pstmt.setString(2, BookVo.getPhoneNumber());
+			pstmt.setString(3, BookVo.getHomeNumber());
 
 			// 쿼리 수행
 			insertedCount = pstmt.executeUpdate();
@@ -185,7 +184,7 @@ public class BookDAOImplOracle implements BookDBDAO {
 			// Connection 맺기
 			conn = getConnection();
 			// 실행 계획 준비
-			String sql = "UPDATE phoneDB SET name=?, phone_number=? WHERE landline_number=?";
+			String sql = "UPDATE phoneDB SET name=?, mobile_number=? WHERE landline_number=?";
 			pstmt = conn.prepareStatement(sql);
 
 			// 파라미터 바인딩
